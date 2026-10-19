@@ -1,0 +1,89 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-ink: #0b2545;
+    --color-ink-soft: #13315c;
+}
+
+@layer base {
+    body {
+        @apply bg-slate-50 text-slate-800 antialiased;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-500 disabled:cursor-not-allowed disabled:opacity-50;
+    }
+    .btn-primary {
+        @apply bg-linear-to-r from-blue-600 to-cyan-500 text-white shadow-sm hover:from-blue-700 hover:to-cyan-600;
+    }
+    .btn-success {
+        @apply bg-emerald-600 text-white shadow-sm hover:bg-emerald-700;
+    }
+    .btn-secondary {
+        @apply border border-slate-300 bg-white text-slate-700 shadow-xs hover:bg-slate-50;
+    }
+    .btn-danger {
+        @apply border border-rose-200 bg-white text-rose-600 hover:bg-rose-50;
+    }
+    .btn-sm {
+        @apply px-3 py-1.5 text-xs;
+    }
+
+    .card {
+        @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
+    }
+    .card-title {
+        @apply text-base font-bold text-slate-900;
+    }
+
+    .label {
+        @apply mb-1.5 block text-xs font-semibold text-slate-600;
+    }
+    .input {
+        @apply block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-xs placeholder:text-slate-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 focus:outline-none;
+    }
+    .input[readonly] {
+        @apply bg-slate-50 text-slate-600;
+    }
+    .input-error {
+        @apply border-rose-400 focus:border-rose-500 focus:ring-rose-500/20;
+    }
+
+    .field-error {
+        @apply mt-1 text-xs font-medium text-rose-600;
+    }
+
+    .th {
+        @apply px-4 py-3 text-left text-xs font-semibold text-slate-500;
+    }
+    .td {
+        @apply px-4 py-3 text-sm;
+    }
+    .num {
+        @apply text-right tabular-nums;
+    }
+
+    .badge {
+        @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ring-inset;
+    }
+}
+
+@media print {
+    @page {
+        margin: 12mm;
+    }
+    * {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+    body {
+        background: #fff;
+    }
+}
