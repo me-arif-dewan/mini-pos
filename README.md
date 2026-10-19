@@ -17,7 +17,7 @@ A standalone Laravel application for taking sales orders, completing them (stock
 Requirements: PHP 8.3+, Composer, Node 20+, MySQL 8+.
 
 ```bash
-git clone <your-repo-url> mini-pos && cd mini-pos
+git clone https://github.com/me-arif-dewan/mini-pos.git && cd mini-pos
 
 composer install
 cp .env.example .env
